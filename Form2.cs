@@ -7,7 +7,7 @@ namespace folderSorting
     {
         public int progress = 0;
         public bool completed = false;
-
+        
 
 
         public frm_progress()
@@ -15,6 +15,7 @@ namespace folderSorting
             InitializeComponent();
             pbr_files_completed.Maximum = frm_main_window.fileCount;
             Folder_Worker folder_Worker = new Folder_Worker();
+
             if (frm_main_window.selection)
             {
                 folder_Worker.Move(frm_main_window.targertDirectory, frm_main_window.filesList, pbr_files_completed,lbl_items_left,lbl_current_item);
@@ -41,19 +42,45 @@ namespace folderSorting
             {
                 try
                 {
-                    lbl_current_item.Text = targetPath + "\\" + Path.GetFileName(filesList[i]);
-                    File.Move(filesList[i], targetPath + "\\" + Path.GetFileName(filesList[i]));
-                    progressBar.PerformStep();
 
-                    lbl_files_left.Text = (frm_main_window.fileCount - i).ToString();
+                    if (frm_main_window.sortByPhotos)
+                    {
+                        if (Path.GetExtension(filesList[i]) == ".JPG" || Path.GetExtension(filesList[i]) == ".PNG" || Path.GetExtension(filesList[i]) == ".JPEG")
+                        {
+                            lbl_current_item.Text = targetPath + "\\" + Path.GetFileName(filesList[i]);
+                            File.Move(filesList[i], targetPath + "\\" + Path.GetFileName(filesList[i]));
+                            progressBar.PerformStep();
+
+                            lbl_files_left.Text = (frm_main_window.fileCount - i).ToString();
+                        }
+                    }
+                    else if (frm_main_window.sortByVideos)
+                    {
+                        if (Path.GetExtension(filesList[i]) == ".MOV" || Path.GetExtension(filesList[i]) == ".MP4")
+                        {
+                            lbl_current_item.Text = targetPath + "\\" + Path.GetFileName(filesList[i]);
+                            File.Move(filesList[i], targetPath + "\\" + Path.GetFileName(filesList[i]));
+                            progressBar.PerformStep();
+
+                            lbl_files_left.Text = (frm_main_window.fileCount - i).ToString();
+                        }
+                    }
+                    else if (frm_main_window.sortByBoth) {
+                        lbl_current_item.Text = targetPath + "\\" + Path.GetFileName(filesList[i]);
+                        File.Move(filesList[i], targetPath + "\\" + Path.GetFileName(filesList[i]));
+                        progressBar.PerformStep();
+
+                        lbl_files_left.Text = (frm_main_window.fileCount - i).ToString();
+                    }
+
                 }
                 catch (Exception ex)
                 {
                     Debug.WriteLine(ex);
                 }
             }
-            lbl_files_left.Text = "Completed!";
-            lbl_current_item.Text = "Completed!";
+            //lbl_files_left.Text = "Completed!";
+            //lbl_current_item.Text = "Completed!";
 
         }
 

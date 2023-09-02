@@ -39,15 +39,17 @@
             // 
             // pbr_files_completed
             // 
+            this.pbr_files_completed.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.pbr_files_completed.ForeColor = System.Drawing.Color.Lime;
             this.pbr_files_completed.Location = new System.Drawing.Point(58, 112);
             this.pbr_files_completed.Name = "pbr_files_completed";
-            this.pbr_files_completed.Size = new System.Drawing.Size(200, 23);
+            this.pbr_files_completed.Size = new System.Drawing.Size(238, 23);
             this.pbr_files_completed.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbr_files_completed.TabIndex = 0;
             // 
             // lbl_progress_title
             // 
+            this.lbl_progress_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_progress_title.AutoSize = true;
             this.lbl_progress_title.Location = new System.Drawing.Point(58, 73);
             this.lbl_progress_title.Name = "lbl_progress_title";
@@ -57,9 +59,12 @@
             // 
             // btn_close
             // 
-            this.btn_close.Location = new System.Drawing.Point(244, 206);
+            this.btn_close.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.btn_close.Location = new System.Drawing.Point(126, 226);
+            this.btn_close.MaximumSize = new System.Drawing.Size(78, 23);
+            this.btn_close.MinimumSize = new System.Drawing.Size(78, 23);
             this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(75, 23);
+            this.btn_close.Size = new System.Drawing.Size(78, 23);
             this.btn_close.TabIndex = 2;
             this.btn_close.Text = "Close";
             this.btn_close.UseVisualStyleBackColor = true;
@@ -67,6 +72,7 @@
             // 
             // lbl_items_left_title
             // 
+            this.lbl_items_left_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.lbl_items_left_title.AutoSize = true;
             this.lbl_items_left_title.Location = new System.Drawing.Point(58, 151);
             this.lbl_items_left_title.Name = "lbl_items_left_title";
@@ -84,6 +90,7 @@
             // 
             // lbl_current_item_title
             // 
+            this.lbl_current_item_title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lbl_current_item_title.AutoSize = true;
             this.lbl_current_item_title.Location = new System.Drawing.Point(58, 177);
             this.lbl_current_item_title.Name = "lbl_current_item_title";
@@ -101,7 +108,7 @@
             // 
             // frm_progress
             // 
-            this.ClientSize = new System.Drawing.Size(349, 261);
+            this.ClientSize = new System.Drawing.Size(352, 261);
             this.Controls.Add(this.lbl_current_item);
             this.Controls.Add(this.lbl_current_item_title);
             this.Controls.Add(this.lbl_items_left);

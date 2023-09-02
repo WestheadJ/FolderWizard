@@ -16,6 +16,10 @@ namespace folderSorting
 
         public static bool selection;
 
+        public static bool sortByPhotos = false;
+        public static bool sortByVideos = false;
+        public static bool sortByBoth = true ;
+
         public frm_main_window()
         {
             InitializeComponent();
@@ -101,7 +105,7 @@ namespace folderSorting
 
         private void btn_start_Click(object sender, EventArgs e)
         {
-            if (rad_btn_move.Checked == true)
+            if (rad_btn_move.Checked)
             {
                 selection = true;
             }
@@ -109,6 +113,34 @@ namespace folderSorting
             {
                 selection = false;
             } ;
+
+            if(rdb_sort_photos.Checked)
+            {
+                sortByPhotos = true;
+            }
+            else
+            {
+                sortByPhotos = false;
+            }
+
+            if(rdb_sort_videos.Checked)
+            {
+                sortByVideos = true;
+            }
+            else
+            {
+                sortByVideos = false;
+            }
+
+            if (rdb_sort_by_both.Checked)
+            {
+                sortByBoth = true;
+            }
+            else
+            {
+                sortByBoth = false;
+            }
+
             frm_progress progressWindow = new frm_progress();
 
             progressWindow.ShowDialog();
@@ -116,9 +148,6 @@ namespace folderSorting
             lbl_target_folder_path.Text = targertDirectory;
             sourceDirectory = "<Not Selected>";
             lbl_source_folder_path.Text = sourceDirectory;
-
-           
-
         }
 
         private bool folders_selected(string selectedDirectory = "",string targetDirectory = "")
@@ -136,9 +165,14 @@ namespace folderSorting
         private void LLb_Github_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LLb_Github_Link.LinkVisited = true;
-            System.Diagnostics.Process.Start("cmd","/c start https://github.com/WestheadJ/FolderWizard");
+            Process.Start("cmd","/c start https://github.com/WestheadJ/FolderWizard");
 
         }
+
+
+        
+
+
     }
 
     

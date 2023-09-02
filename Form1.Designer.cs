@@ -292,11 +292,11 @@
         private RadioButton rad_btn_copy;
         private Button btn_start;
         public RadioButton rad_btn_move;
-        private RadioButton rdb_sort_videos;
         private GroupBox gpb_options;
-        private RadioButton rdb_sort_photos;
-        private CheckBox ckb_sort_date;
-        private RadioButton rdb_sort_by_both;
         private LinkLabel LLb_Github_Link;
+        public RadioButton rdb_sort_videos;
+        public RadioButton rdb_sort_photos;
+        public CheckBox ckb_sort_date;
+        public RadioButton rdb_sort_by_both;
     }
 }
