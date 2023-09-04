@@ -5,28 +5,28 @@ namespace folderSorting
 
 
 {
+    // Main Window Form
     public partial class frm_main_window : Form
     {
         public static string sourceDirectory = "";
         public static string targertDirectory = "";
-
         public static List<string> filesList = new List<string>();
-
         public static int fileCount = 0;
-
         public static bool selection;
-
         public static bool sortByPhotos = false;
         public static bool sortByVideos = false;
         public static bool sortByBoth = true ;
+        public static IDictionary<string,string> dateDirectories = new Dictionary<string,string>();
 
+
+        // Initaliser
         public frm_main_window()
         {
             InitializeComponent();
             btn_start.Hide();
         }
 
-
+        // Target Folder Button Click
         private void btn_select_target_folder_click(object sender, EventArgs e)
         {
             ;
@@ -34,12 +34,13 @@ namespace folderSorting
             {
                 targertDirectory = fbd_target.SelectedPath;
                 lbl_target_folder_path.Text = targertDirectory.ToString();
-                if (folders_selected(sourceDirectory, targertDirectory))
+                if (folders_selected(sourceDirectory))
                 {
                     btn_start.Show();
                 }
                 fbd_target.Reset();
                 fbd_target.Dispose();
+                readFoldersInDirectory(targertDirectory);
             }
             else
             {
@@ -47,6 +48,8 @@ namespace folderSorting
             }
             
         }
+
+        // Source Folder Button Click
         private void btn_select_source_folder_Click(object sender, EventArgs e)
         {
             DialogResult sourceResult = fbd_source.ShowDialog();
@@ -62,7 +65,7 @@ namespace folderSorting
                 Cursor.Current = Cursors.WaitCursor;
                 readFilesInDirectory(sourceDirectory);
                 Cursor.Current = Cursors.Default;
-                if (folders_selected(sourceDirectory, targertDirectory))
+                if (folders_selected(sourceDirectory))
                 {
                     btn_start.Show();
                 }
@@ -78,7 +81,7 @@ namespace folderSorting
 
         }
 
-
+        // Read files
         private void readFilesInDirectory(string targetDirectory)
         {
             
@@ -101,8 +104,17 @@ namespace folderSorting
             lbl_file_count.Text = fileCount.ToString();
         }
 
-        
+        private void readFoldersInDirectory(string targetDirectory)
+        {
+            var folders = from folder in Directory.EnumerateDirectories(targetDirectory)
+                          select folder;
+            foreach (var folder in folders)
+            {
+                Debug.WriteLine(folder);
+            }
+        }
 
+        // Start the process
         private void btn_start_Click(object sender, EventArgs e)
         {
             if (rad_btn_move.Checked)
@@ -150,7 +162,8 @@ namespace folderSorting
             lbl_source_folder_path.Text = sourceDirectory;
         }
 
-        private bool folders_selected(string selectedDirectory = "",string targetDirectory = "")
+        // See if both folders have a path
+        private bool folders_selected(string selectedDirectory = "")
         {
             if (selectedDirectory != "" && targertDirectory != "")
             {
@@ -162,6 +175,7 @@ namespace folderSorting
             }
         }
 
+        // Go to github through the link label
         private void LLb_Github_Link_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             LLb_Github_Link.LinkVisited = true;
