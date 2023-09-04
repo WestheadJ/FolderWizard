@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "6uTDVQ4L53JbQzTAEqxpBHtQNXHZWyHhd9wlC7e4yx+/fSP/zHjca8pDc9rBSRtLQzHlWnIKCGCyPYNVVrydNQ==",
+  "dgSpecHash": "9L8VdTt9SPhaOw7T6PMFSemfWbu70nJWiyzf0UplTlpfOkJZ4mHdChCJtEUzc61FvGVqa/LEsROZ3BnYj3V38w==",
   "success": true,
-  "projectFilePath": "\\\\TRUENAS\\main\\Programming\\FolderWizard\\folderSorting.csproj",
+  "projectFilePath": "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\folderSorting.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
