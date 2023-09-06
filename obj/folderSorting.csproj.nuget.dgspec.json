@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\folderSorting.csproj": {}
+    "\\\\TRUENAS\\main\\Programming\\FolderWizard\\folderSorting.csproj": {}
   },
   "projects": {
-    "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\folderSorting.csproj": {
+    "\\\\TRUENAS\\main\\Programming\\FolderWizard\\folderSorting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\folderSorting.csproj",
+        "projectUniqueName": "\\\\TRUENAS\\main\\Programming\\FolderWizard\\folderSorting.csproj",
         "projectName": "folderSorting",
-        "projectPath": "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\folderSorting.csproj",
+        "projectPath": "\\\\TRUENAS\\main\\Programming\\FolderWizard\\folderSorting.csproj",
         "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\james\\Documents\\GitHub\\FolderWizard\\obj\\",
+        "outputPath": "\\\\TRUENAS\\main\\Programming\\FolderWizard\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -63,7 +63,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     }
