@@ -9,17 +9,15 @@ namespace folderSorting
     public partial class frm_main_window : Form
     {
         public static string sourceDirectory = "";
-        public static string targertDirectory = "";
+        public static string targetDirectory = "";
         public static List<string> filesList = new List<string>();
         public static int fileCount = 0;
         public static bool selection;
         public static bool sortByPhotos = false;
         public static bool sortByVideos = false;
         public static bool sortByBoth = true ;
-        public static IDictionary<string,string> dateDirectories = new Dictionary<string,string>();
 
-
-        // Initaliser
+        // Initializer
         public frm_main_window()
         {
             InitializeComponent();
@@ -29,18 +27,29 @@ namespace folderSorting
         // Target Folder Button Click
         private void btn_select_target_folder_click(object sender, EventArgs e)
         {
-            ;
             if (fbd_target.ShowDialog() == DialogResult.OK)
             {
-                targertDirectory = fbd_target.SelectedPath;
-                lbl_target_folder_path.Text = targertDirectory.ToString();
+                if (ckb_sort_date.Checked)
+                {
+                    if (!Directory.Exists(fbd_target.SelectedPath+"\\Photos"))
+                    {
+                        //Debug.WriteLine("Photos Folder don't exist");
+                        Directory.CreateDirectory(fbd_target.SelectedPath + "\\Photos");
+                    }
+                    if (!Directory.Exists(fbd_target.SelectedPath + "\\Videos")){
+                        //Debug.WriteLine("Videos Folder don't exist");
+                        Directory.CreateDirectory(fbd_target.SelectedPath + "\\Videos");
+                    }
+                }
+                targetDirectory = fbd_target.SelectedPath;
+                lbl_target_folder_path.Text = targetDirectory.ToString();
                 if (folders_selected(sourceDirectory))
                 {
                     btn_start.Show();
                 }
                 fbd_target.Reset();
                 fbd_target.Dispose();
-                readFoldersInDirectory(targertDirectory);
+                readFoldersInDirectory(targetDirectory);
             }
             else
             {
@@ -156,8 +165,8 @@ namespace folderSorting
             frm_progress progressWindow = new frm_progress();
 
             progressWindow.ShowDialog();
-            targertDirectory = "<Not Selected>";
-            lbl_target_folder_path.Text = targertDirectory;
+            targetDirectory = "<Not Selected>";
+            lbl_target_folder_path.Text = targetDirectory;
             sourceDirectory = "<Not Selected>";
             lbl_source_folder_path.Text = sourceDirectory;
         }
@@ -165,7 +174,7 @@ namespace folderSorting
         // See if both folders have a path
         private bool folders_selected(string selectedDirectory = "")
         {
-            if (selectedDirectory != "" && targertDirectory != "")
+            if (selectedDirectory != "" && targetDirectory != "")
             {
                 return true;
             }
@@ -182,11 +191,6 @@ namespace folderSorting
             Process.Start("cmd","/c start https://github.com/WestheadJ/FolderWizard");
 
         }
-
-
-        
-
-
     }
 
     

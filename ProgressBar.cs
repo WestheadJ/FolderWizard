@@ -18,12 +18,12 @@ namespace folderSorting
 
             if (frm_main_window.selection)
             {
-                folder_Worker.Move(frm_main_window.targertDirectory, frm_main_window.filesList, pbr_files_completed,lbl_items_left,lbl_current_item);
+                folder_Worker.Move(frm_main_window.targetDirectory, frm_main_window.filesList, pbr_files_completed,lbl_items_left,lbl_current_item);
                 
             }
             else
             {
-                folder_Worker.Copy(frm_main_window.targertDirectory, frm_main_window.filesList, pbr_files_completed, lbl_items_left, lbl_current_item);
+                folder_Worker.Copy(frm_main_window.targetDirectory, frm_main_window.filesList, pbr_files_completed, lbl_items_left, lbl_current_item);
             }
         }
 
