@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\james\\Documents\\Programming\\folderSorting\\folderSorting.csproj",
+      "projectUniqueName": "\\\\10.90.1.22\\ssd\\Programming\\FolderWizard\\folderSorting.csproj",
       "projectName": "folderSorting",
-      "projectPath": "C:\\Users\\james\\Documents\\Programming\\folderSorting\\folderSorting.csproj",
+      "projectPath": "\\\\10.90.1.22\\ssd\\Programming\\FolderWizard\\folderSorting.csproj",
       "packagesPath": "C:\\Users\\james\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\james\\Documents\\Programming\\folderSorting\\obj\\",
+      "outputPath": "\\\\10.90.1.22\\ssd\\Programming\\FolderWizard\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

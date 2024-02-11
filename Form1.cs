@@ -138,11 +138,10 @@ namespace folderSorting
         // Function for resting all labels and variables through the program
         private void clearUp()
         {
-            targertDirectory = "<Not Selected>";
-            lbl_target_folder_path.Text = targertDirectory;
-            sourceDirectory = "<Not Selected>";
-            lbl_source_folder_path.Text = sourceDirectory;
-
+            lbl_target_folder_path.Text = "<Not Selected>";
+            lbl_source_folder_path.Text = "<Not Selected>";
+            lbl_file_count.Text = "0";
+            btn_start.Hide();
         }
     }
 

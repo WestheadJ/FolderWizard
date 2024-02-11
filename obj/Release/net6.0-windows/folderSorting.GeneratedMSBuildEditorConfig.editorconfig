@@ -14,4 +14,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = folderSorting
-build_property.ProjectDir = C:\Users\james\Documents\Programming\folderSorting\
+build_property.ProjectDir = \\10.90.1.22\ssd\Programming\FolderWizard\
